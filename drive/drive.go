@@ -225,7 +225,7 @@ func (d *Client) GetRoot() (*APIObject, error) {
 	
 	file, err := client.Files.
 		Get(d.rootNodeID).
-		SupportsTeamDrives(1).
+		SupportsTeamDrives(true).
 		Fields(googleapi.Field(Fields)).
 		Do()
 	if nil != err {
