@@ -32,11 +32,11 @@ type Client struct {
 }
 
 // NewClient creates a new Google Drive client
-func NewClient(config *config.Config, cache *Cache, refreshInterval time.Duration, rootNodeID string) (*Client, error) {
+func NewClient(config *config.Config, cache *Cache, refreshInterval time.Duration, rootNodeID string) (*Client, error) {	
 	client := Client{
 		cache:   cache,
 		context: context.Background(),
-		config: &oauth2.Config{
+		config: &oauth2.Config {
 			ClientID:     config.ClientID,
 			ClientSecret: config.ClientSecret,
 			Endpoint: oauth2.Endpoint{
@@ -47,7 +47,7 @@ func NewClient(config *config.Config, cache *Cache, refreshInterval time.Duratio
 			Scopes:      []string{gdrive.DriveScope},
 		},
 		rootNodeID:      rootNodeID,
-		changesChecking: false,
+		changesChecking: false,		
 	}
 
 	if "" == client.rootNodeID {
@@ -221,10 +221,11 @@ func (d *Client) GetRoot() (*APIObject, error) {
 	if nil != err {
 		Log.Debugf("%v", err)
 		return nil, fmt.Errorf("Could not get Google Drive client")
-	}
-
+	}	
+	
 	file, err := client.Files.
 		Get(d.rootNodeID).
+		SupportsTeamDrives(1).
 		Fields(googleapi.Field(Fields)).
 		Do()
 	if nil != err {
