@@ -51,7 +51,7 @@ func NewClient(config *config.Config, cache *Cache, refreshInterval time.Duratio
 	}
 
 	if "" == client.rootNodeID {
-		client.rootNodeID = "0AKva2WVSVCDEUk9PVA"
+		client.rootNodeID = "root"
 	}
 
 	if err := client.authorize(); nil != err {
