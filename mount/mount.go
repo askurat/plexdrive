@@ -11,9 +11,9 @@ import (
 
 	"bazil.org/fuse"
 	"bazil.org/fuse/fs"
+	"github.com/askurat/plexdrive/chunk"
 	"github.com/askurat/plexdrive/drive"
 	. "github.com/claudetech/loggo/default"
-	"github.com/dweidenfeld/plexdrive/chunk"
 	"golang.org/x/net/context"
 )
 

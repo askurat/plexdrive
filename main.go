@@ -17,12 +17,12 @@ import (
 
 	"runtime"
 
+	"github.com/askurat/plexdrive/chunk"
+	"github.com/askurat/plexdrive/config"
 	"github.com/askurat/plexdrive/drive"
+	"github.com/askurat/plexdrive/mount"
 	"github.com/claudetech/loggo"
 	. "github.com/claudetech/loggo/default"
-	"github.com/dweidenfeld/plexdrive/chunk"
-	"github.com/dweidenfeld/plexdrive/config"
-	"github.com/dweidenfeld/plexdrive/mount"
 	flag "github.com/ogier/pflag"
 	"golang.org/x/sys/unix"
 )
